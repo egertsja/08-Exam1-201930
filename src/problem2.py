@@ -41,14 +41,14 @@ def test_factor_sum():
     print('Testing the   factor_sum   function:')
     print('---------------------------------------------------------')
 
-    #Test 1 - A Prime Number
+    #Test 1 - A Prime Number, Two Factors
     expected = 6
     actual = factor_sum(5)
     print()
     print('-----------Expected:',expected)
     print('-------------Actual:', actual)
 
-    # Test 2 - A Low Square, so three factors
+    # Test 2 - A Low Square, Three Factors
     expected = 13
     actual = factor_sum(9)
     print()
@@ -69,7 +69,7 @@ def test_factor_sum():
     print('-----------Expected:', expected)
     print('-------------Actual:', actual)
 
-    # Test 5 - The Number One
+    # Test 5 - The Number One, One Factor
     expected = 1
     actual = factor_sum(1)
     print()
