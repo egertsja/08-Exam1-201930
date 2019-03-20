@@ -3,13 +3,13 @@ Exam 1, problem 1.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Jonah Egertson.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
 # -----------------------------------------------------------------------------
-# TODO: 2. Right-click on the  src  folder and
+# DONE: 2. Right-click on the  src  folder and
 #              Mark Directory as ... Sources Root,
 #          if you have not already done so.
 # -----------------------------------------------------------------------------
@@ -118,9 +118,32 @@ def problem1(circle, rectangle, color, length, window):
       :type window:    rg.RoseWindow
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.  SEE THE PICTURES in the PDF!
+    # DONE: 3. Implement and test this function.  SEE THE PICTURES in the PDF!
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
+    circle.attach_to(window)
+    rectangle.attach_to(window)
+
+    point1 = circle.center
+    point2 = rectangle.get_center()
+    line = rg.Line(point1,point2)
+    line.color = color
+    line.thickness = circle.outline_thickness
+    line.attach_to(window)
+
+    mp2 = line.get_midpoint()
+    p1 = rg.Point(mp2.x,mp2.y)
+    p2 = rg.Point(mp2.x,mp2.y)
+    print(p1,p2,length)
+    p1.y = mp2.y - (length/2)
+    p2.y = mp2.y + (length/2)
+    print(p1.y,p2.y,mp2.y)
+    line2 = rg.Line(p1,p2)
+    line2.color = circle.fill_color
+    line2.thickness = circle.outline_thickness+rectangle.outline_thickness
+    line2.attach_to(window)
+
+    window.render()
 
 
 # -----------------------------------------------------------------------------
