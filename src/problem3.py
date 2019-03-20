@@ -268,7 +268,7 @@ def problem3b(m, x):
     What goes out:
       -- Returns True if the number of doubly prime integers from m**2 to m**4,
          not counting m**4, is greater than or equal to x.
-          eturns False otherwise.
+          Returns False otherwise.
     Side effects:   None.
     Examples:
       -- problem3b(6, 4) returns
@@ -283,7 +283,7 @@ def problem3b(m, x):
            which is approximately 12.020144157845959.
      """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Tests have been written for you (above).
     ###########################################################################
     ###########################################################################
@@ -291,14 +291,14 @@ def problem3b(m, x):
     #    **  For full credit you must appropriately
     #    **  use (call) the appropriate function(s) that are DEFINED ABOVE.
     ###########################################################################
-    count = 0
+    sum = 0
     a = m**2
     for k in range((m**4) - a):
         if is_prime(k + a):
             if is_prime(sum_of_digits(k + a)):
-                count = count+1
-    print(count)
-    if count >= x:
+                sum = sum+(k+a)
+    print(sum)
+    if sum >= x:
         return True
     else:
         return False
