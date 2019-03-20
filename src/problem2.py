@@ -3,8 +3,8 @@ Exam 1, problem 2.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Jonah Egertson.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -15,7 +15,7 @@ def main():
 def test_factor_sum():
     """ Tests the   factor_sum   function. """
     ###########################################################################
-    #  TODO: 2. Implement this TEST function, as follows:
+    #  DONE: 2. Implement this TEST function, as follows:
     #
     #    1. Read the  doc-string of the   factor_sum   function defined below.
     #
@@ -40,6 +40,41 @@ def test_factor_sum():
     print('---------------------------------------------------------')
     print('Testing the   factor_sum   function:')
     print('---------------------------------------------------------')
+
+    #Test 1 - A Prime Number
+    expected = 6
+    actual = factor_sum(5)
+    print()
+    print('-----------Expected:',expected)
+    print('-------------Actual:', actual)
+
+    # Test 2 - A Low Square, so three factors
+    expected = 13
+    actual = factor_sum(9)
+    print()
+    print('-----------Expected:', expected)
+    print('-------------Actual:', actual)
+
+    #Test 3 - Four Factors
+    expected = 12
+    actual = factor_sum(6)
+    print()
+    print('-----------Expected:', expected)
+    print('-------------Actual:', actual)
+
+    # Test 4 - Six Factors
+    expected = 28
+    actual = factor_sum(12)
+    print()
+    print('-----------Expected:', expected)
+    print('-------------Actual:', actual)
+
+    # Test 5 - The Number One
+    expected = 1
+    actual = factor_sum(1)
+    print()
+    print('-----------Expected:', expected)
+    print('-------------Actual:', actual)
 
     ###########################################################################
     # WRITE YOUR TESTS BELOW HERE:
@@ -78,3 +113,6 @@ def factor_sum(n):
     ###########################################################################
     # DO NOT modify the above line of code!
     ###########################################################################
+
+
+main()
